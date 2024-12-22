@@ -23,45 +23,7 @@ body {
 <div class="center_div">
   <h1>Hello World!</h1>
   <p>Download Here</p>
-  <!-- Place your vCard data inside a <pre> tag -->
-<pre id="vcard-data">
-    BEGIN:VCARD
-    VERSION:3.0
-    FN:John Doe
-    ORG:Example Inc.
-    TEL:+123456789
-    EMAIL:john.doe@example.com
-    END:VCARD
-    </pre>
-    
-    <!-- Button to trigger the download -->
-    <button onclick="downloadVCF()">Download VCF</button>
-    
-    <script>
-    function downloadVCF() {
-        // Get the vCard data from the <pre> tag
-        var vcardData = document.getElementById('vcard-data').innerText;
-    
-        // Create a Blob containing the vCard data
-        var blob = new Blob([vcardData], { type: 'text/vcard' });
-    
-        // Create a link element
-        var link = document.createElement('a');
-    
-        // Set the href attribute to the Blob URL
-        link.href = window.URL.createObjectURL(blob);
-    
-        // Set the download attribute with a desired filename
-        link.download = 'contact.vcf';
-    
-        // Programmatically trigger the download
-        document.body.appendChild(link);
-        link.click();
-    
-        // Cleanup
-        document.body.removeChild(link);
-    }
-    </script>
+
 </div>
 
 </body>
